@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="standard_faces">
+        <item>¯\\_(ツ)_/¯</item>
+        <item>ʕ•ᴥ•ʔ</item>
+        <item>(ง ͠° ͟ل͜ ͡°)ง</item>
+        <item>( ͡° ͜ʖ ͡°)</item>
+        <item>(ಥ﹏ಥ)</item>
+        <item>(ノಠ益ಠ)ノ彡┻━┻</item>
+        <item>(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</item>
+        <item>( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)</item>
+        <item>(づ￣ ³￣)づ</item>
+        <item>(~˘▾˘)~</item>
+        <item>ᕙ(⇀‸↼‶)ᕗ</item>
+        <item>┻━┻ ︵ヽ(`Д´)ﾉ︵ ┻━┻</item>
+        <item>（╯°□°）╯︵( .o.)</item>
+        <item>┬──┬ ノ( ゜-゜ノ)</item>
+        <item>(｡◕‿◕｡)</item>
+    </string-array>
+</resources>
