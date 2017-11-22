@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Face Clip</string>
+    <string name="menu_string_help">Help</string>
+    <string name="gotcha">Gotcha!</string>
+
+    <string name="help_dialog_title">How To</string>
+
+    <string name="help_dialog_content">Tap a face that you want to copy and it will be added to your clipboard. \n\nHold a face to send it.</string>
 </resources>
