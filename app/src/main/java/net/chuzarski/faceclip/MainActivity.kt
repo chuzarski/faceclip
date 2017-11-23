@@ -11,10 +11,10 @@ import org.slf4j.LoggerFactory
 
 class MainActivity : Activity(), AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener {
 
-    var buttonList: ListView? = null
-    var list: Array<String>? = null
-    var clipboard: ClipboardManager? = null
-    var log: Logger = LoggerFactory.getLogger("MainActivity")
+    private var buttonList: ListView? = null
+    private var list: Array<String>? = null
+    private var clipboard: ClipboardManager? = null
+    private var log: Logger = LoggerFactory.getLogger("MainActivity")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +25,7 @@ class MainActivity : Activity(), AdapterView.OnItemClickListener, AdapterView.On
 
         initList()
 
-        log.debug("activity created!")
+        log.info("Ready")
 
     }
 
@@ -36,7 +36,6 @@ class MainActivity : Activity(), AdapterView.OnItemClickListener, AdapterView.On
     }
 
     private fun initList(): Unit {
-        log.debug("Setting up main list")
 
         // need a list!
         buttonList!!.adapter = object : ArrayAdapter<String>(this, R.layout.lv_text_standard,
@@ -80,8 +79,20 @@ class MainActivity : Activity(), AdapterView.OnItemClickListener, AdapterView.On
         alertbuilder.create().show()
     }
 
+    private fun handleInfoMenu(): Unit {
+        var alertbuilder: AlertDialog.Builder = AlertDialog.Builder(this)
+
+        alertbuilder
+                .setTitle(resources.getString(R.string.info_dialog_title))
+                .setMessage(resources.getString(R.string.info_dialog_content))
+                .setNeutralButton(R.string.gotcha, { dialog: DialogInterface, i: Int ->
+                    dialog.dismiss()
+                })
+        alertbuilder.create().show()
+    }
+
     override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        var currFace: String = ""
+        var currFace: String
         var clip: ClipData
 
         currFace = getCurrFace(parent, position)
@@ -112,7 +123,8 @@ class MainActivity : Activity(), AdapterView.OnItemClickListener, AdapterView.On
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         if(item != null) {
             when(item.itemId) {
-                R.id.help_menu_action -> { handleHelpMenu(); return true }
+                R.id.menu_help_action -> { handleHelpMenu(); return true }
+                R.id.menu_info_action -> { handleInfoMenu(); return true }
                 else -> return false
             }
         } else {
